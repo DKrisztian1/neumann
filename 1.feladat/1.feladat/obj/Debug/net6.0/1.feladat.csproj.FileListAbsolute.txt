@@ -1,0 +1,15 @@
+C:\Users\dobos.attila\source\repos\1.feladat\1.feladat\bin\Debug\net6.0\1.feladat.exe
+C:\Users\dobos.attila\source\repos\1.feladat\1.feladat\bin\Debug\net6.0\1.feladat.deps.json
+C:\Users\dobos.attila\source\repos\1.feladat\1.feladat\bin\Debug\net6.0\1.feladat.runtimeconfig.json
+C:\Users\dobos.attila\source\repos\1.feladat\1.feladat\bin\Debug\net6.0\1.feladat.dll
+C:\Users\dobos.attila\source\repos\1.feladat\1.feladat\bin\Debug\net6.0\1.feladat.pdb
+C:\Users\dobos.attila\source\repos\1.feladat\1.feladat\obj\Debug\net6.0\1.feladat.csproj.AssemblyReference.cache
+C:\Users\dobos.attila\source\repos\1.feladat\1.feladat\obj\Debug\net6.0\1.feladat.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dobos.attila\source\repos\1.feladat\1.feladat\obj\Debug\net6.0\1.feladat.AssemblyInfoInputs.cache
+C:\Users\dobos.attila\source\repos\1.feladat\1.feladat\obj\Debug\net6.0\1.feladat.AssemblyInfo.cs
+C:\Users\dobos.attila\source\repos\1.feladat\1.feladat\obj\Debug\net6.0\1.feladat.csproj.CoreCompileInputs.cache
+C:\Users\dobos.attila\source\repos\1.feladat\1.feladat\obj\Debug\net6.0\1.feladat.dll
+C:\Users\dobos.attila\source\repos\1.feladat\1.feladat\obj\Debug\net6.0\refint\1.feladat.dll
+C:\Users\dobos.attila\source\repos\1.feladat\1.feladat\obj\Debug\net6.0\1.feladat.pdb
+C:\Users\dobos.attila\source\repos\1.feladat\1.feladat\obj\Debug\net6.0\1.feladat.genruntimeconfig.cache
+C:\Users\dobos.attila\source\repos\1.feladat\1.feladat\obj\Debug\net6.0\ref\1.feladat.dll

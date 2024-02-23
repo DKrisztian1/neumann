@@ -22,7 +22,48 @@ stringSzamok = File.ReadAllLines("szamok.txt").ToList();
 
 //1.a
 
-double x = 1310438493;
+long x = 1310438493;
+long reminder = 1;
+long y;
+int hany = 0;
+foreach (var szam in szamok)
+{
+    y = Convert.ToInt64(szam);
+
+    if (x > y)
+    {
+        if (x % y == 0) { reminder = y; }
+
+        else
+        {
+            reminder = x % y;
+
+            if (reminder != 0) { reminder = reminder % y; }
+
+        }
+    }
+    else if (x == y || x < y)
+    {
+        if (y % x == 0) { reminder = x; }
+
+        else
+        {
+
+            reminder = y % x;
+
+            if (reminder != 0) { reminder = reminder % x; }
+
+        }
+
+    }
+
+    if (reminder==1)
+    {
+        hany++;
+    }
+}
+Console.WriteLine(hany);
+
 
 
 
