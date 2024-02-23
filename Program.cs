@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ConsoleApp7;
+using ConsoleApp1;
 
 List<double> szamok = new List<double>();
 StreamReader sr = new StreamReader("szamok.txt");
@@ -14,6 +14,9 @@ while (!sr.EndOfStream)
     szamok.Add(Convert.ToDouble(sr.ReadLine()));
 }
 sr.Close();
+
+List<string>stringSzamok = new List<string>();
+stringSzamok = File.ReadAllLines("szamok.txt").ToList();
 
 
 
@@ -27,139 +30,66 @@ while (!sr2.EndOfStream)
 sr2.Close();
 
 
+//1.a
 
-
-/*
-int hanyDarab = 0;
-
-foreach (var szam in szamok)
-{
-    if (szam % 3 != 0 && szam % 7 != 0 && szam % 9 != 0 && szam % 13 != 0)
-        hanyDarab++;
-}
-Console.WriteLine(hanyDarab);
-*/
-
-
-/*
 double x = 1310438493;
 
-foreach (double y in szamok)
-{
-    double b = y;
-    while (x != b)
-    {
-        if (x > b)
-            x = x - b;
-        else
-            b = b - x;
-    }
-    if (x == 1)
-    {
-        hanyDarab++;
-    }
-}
-Console.WriteLine(hanyDarab);
-*/
 
 
 
-/*
+
 //1.b
-
-List<char> MegadottSzamSzamjegyei = new List<char>();
-foreach (var jegy in "2354211341")
-    MegadottSzamSzamjegyei.Add(jegy);
-List<char> MasolatMegadottSzamSzamjegyei = new List<char>();
-
+/*
+string alapSzam = "2354211341";
 int hanyAnaize = 0;
+bool azvolt = false;
 
-List<char> JelenlegiSzamSzamjegyei = new List<char>();
-
-foreach (var szam in szamok)
+foreach (var szam in stringSzamok)
 {
-    JelenlegiSzamSzamjegyei.Clear();
-    MasolatMegadottSzamSzamjegyei.Clear();
-    MasolatMegadottSzamSzamjegyei = MegadottSzamSzamjegyei;
+    char[] firstCharsArray = alapSzam.ToCharArray();
+    char[] secondCharsArray = szam.ToCharArray();
 
-    foreach (char szamJegy in Convert.ToString(szam))
+    Array.Sort(firstCharsArray);
+    Array.Sort(secondCharsArray);
+
+    for (int i = 0; i < firstCharsArray.Length; i++)
     {
-        JelenlegiSzamSzamjegyei.Add(szamJegy);
-    }
-    
-
-
-    for (int i = 0; i < 9; i++)
-    {
-        if (MasolatMegadottSzamSzamjegyei.Contains(JelenlegiSzamSzamjegyei[i]))
+        if (firstCharsArray[i].ToString() != secondCharsArray[i].ToString())
         {
-            JelenlegiSzamSzamjegyei.Remove(JelenlegiSzamSzamjegyei[i]);
-            MasolatMegadottSzamSzamjegyei.Remove(JelenlegiSzamSzamjegyei[i]);
+            azvolt = false;
+            break;
         }
     }
-    
+    if (azvolt)
+        hanyAnaize++;
 
-    Console.Write(JelenlegiSzamSzamjegyei.Count() + ",");
-    Console.WriteLine(MegadottSzamSzamjegyei.Count());
-
-    
-   
 }
 Console.WriteLine(hanyAnaize);
 */
 
 
-
+//1.c
 /*
- //1.c
-Dictionary<int, int> SzamokElofordulasa = new Dictionary<int, int>();
-foreach (var szam in szamok)
+List<string> ketjegyuek = new List<string>();
+foreach (string szam in stringSzamok)
 {
-    int szam1 = Convert.ToInt32(Convert.ToString(szam).Substring(0, 2));
-    if (!SzamokElofordulasa.ContainsKey(szam1))
-        SzamokElofordulasa.Add(szam1, 1);
-    else
-        SzamokElofordulasa[szam1] += 1;
-
-    int szam2 = Convert.ToInt32(Convert.ToString(szam).Substring(2, 2));
-    if (!SzamokElofordulasa.ContainsKey(szam2))
-        SzamokElofordulasa.Add(szam2, 1);
-    else
-        SzamokElofordulasa[szam2] += 1;
-
-    int szam3 = Convert.ToInt32(Convert.ToString(szam).Substring(4, 2));
-    if (!SzamokElofordulasa.ContainsKey(szam3))
-        SzamokElofordulasa.Add(szam3, 1);
-    else
-        SzamokElofordulasa[szam3] += 1;
-
-    int szam4 = Convert.ToInt32(Convert.ToString(szam).Substring(6, 2));
-    if (!SzamokElofordulasa.ContainsKey(szam4))
-        SzamokElofordulasa.Add(szam4, 1);
-    else
-        SzamokElofordulasa[szam4] += 1;
-
-    int szam5 = Convert.ToInt32(Convert.ToString(szam).Substring(8, 2));
-    if (!SzamokElofordulasa.ContainsKey(szam5))
-        SzamokElofordulasa.Add(szam5, 1);
-    else
-        SzamokElofordulasa[szam5] += 1;
+    for (int i = 0; i < 9; i++)
+    {
+        ketjegyuek.Add($"{szam[i]}{szam[i+1]}");
+    }
 }
-
-var RendezettSzamok = SzamokElofordulasa.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
-Console.WriteLine(RendezettSzamok.First().Key);
-
-
-
-//1.c  Válasz:   21
+string most = ketjegyuek.GroupBy(i => i).OrderByDescending(grp => grp.Count())
+      .Select(grp => grp.Key).First();
+Console.WriteLine(most);
 */
+//1.c  Válasz:   12
 
 
 
 
 
-/*
 //2.a
+/*
 Dictionary<string, double> MegyekLakossaga = new Dictionary<string, double>();
 foreach (var telepules in Telepulesek)
 {
@@ -169,10 +99,12 @@ foreach (var telepules in Telepulesek)
         MegyekLakossaga[telepules.MegyeAzon] += telepules.LakosokSzama;
 }
 
-var LakossagAlapjanRendezett = MegyekLakossaga.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+var LakossagAlapjanRendezett = MegyekLakossaga.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
 Console.WriteLine($"{LakossagAlapjanRendezett.ElementAt(1).Key} - { LakossagAlapjanRendezett.ElementAt(1).Value}");
-//2.a  Valasz:    PE - 1212055
+
+//2.a  Valasz:    TO - 234847
 */
+
 
 
 
@@ -198,6 +130,31 @@ foreach (Telepules telepules in Telepulesek)
 }
 Console.WriteLine(hanyKecskemetSzegedKorzet);
 //2.c Valasz: 24
+*/
+
+
+//2.d
+/*
+List<Telepules> JoSzelessegiKorok = new List<Telepules>();
+foreach (var telepules in Telepulesek)
+{
+    if (telepules.Szelessegi >= 47.3 && telepules.Szelessegi <= 47.4)
+        JoSzelessegiKorok.Add(telepules);
+}
+double kulonbseg = 0;
+string tele1 = "", tele2 = "";
+
+for (int i = 1; i < JoSzelessegiKorok.Count(); i++)
+{
+    if (Math.Abs(JoSzelessegiKorok[i - 1].Terulet - JoSzelessegiKorok[i].Terulet) > kulonbseg)
+    {
+        tele1 = JoSzelessegiKorok[i - 1].TelepulesNeve;
+        tele2 = JoSzelessegiKorok[i].TelepulesNeve;
+        kulonbseg = Math.Round(Math.Abs(JoSzelessegiKorok[i - 1].Terulet - JoSzelessegiKorok[i].Terulet), 2);
+    }
+}
+Console.WriteLine($"{tele1} - {tele2} = {kulonbseg}");
+//2.d Valasz: Karczag-Berekfurdo-350,06
 */
 
 
