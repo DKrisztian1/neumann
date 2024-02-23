@@ -112,10 +112,9 @@ Console.WriteLine(amiKell.TelepulesNeve);
 
 
 //2.f
-
+/*
 int aetszam = 0;
 List<Telepules> aetatet = new List<Telepules>();
-
 
 foreach (var telepules in Telepulesek)
 {
@@ -136,16 +135,12 @@ foreach (var telepules in Telepulesek)
         int t = -1;
         bool aUtanT = false;
         int aUtanTaIndex = -2;
-        List<int> EbetukIndexei = new List<int>();
         for (int i = 0; i < aetKarakterek.Count(); i++)
         {
             if (aetKarakterek[i] == 'a')
                 a = i;
             else if (aetKarakterek[i] == 'e')
-            {
-                e = i;
-                EbetukIndexei.Add(i);
-            }           
+                e = i;         
             else if (aetKarakterek[i] == 't')
                 t = i;
 
@@ -192,5 +187,4 @@ foreach (var item in aetatet)
 {
     Console.WriteLine(item.TelepulesNeve);
 }
-
-Console.WriteLine(aetatet.Count());
+*/
