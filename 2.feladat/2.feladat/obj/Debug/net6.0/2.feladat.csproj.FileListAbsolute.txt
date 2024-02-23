@@ -1,0 +1,15 @@
+C:\csharp\2.feladat\2.feladat\bin\Debug\net6.0\2.feladat.exe
+C:\csharp\2.feladat\2.feladat\bin\Debug\net6.0\2.feladat.deps.json
+C:\csharp\2.feladat\2.feladat\bin\Debug\net6.0\2.feladat.runtimeconfig.json
+C:\csharp\2.feladat\2.feladat\bin\Debug\net6.0\2.feladat.dll
+C:\csharp\2.feladat\2.feladat\bin\Debug\net6.0\2.feladat.pdb
+C:\csharp\2.feladat\2.feladat\obj\Debug\net6.0\2.feladat.csproj.AssemblyReference.cache
+C:\csharp\2.feladat\2.feladat\obj\Debug\net6.0\2.feladat.GeneratedMSBuildEditorConfig.editorconfig
+C:\csharp\2.feladat\2.feladat\obj\Debug\net6.0\2.feladat.AssemblyInfoInputs.cache
+C:\csharp\2.feladat\2.feladat\obj\Debug\net6.0\2.feladat.AssemblyInfo.cs
+C:\csharp\2.feladat\2.feladat\obj\Debug\net6.0\2.feladat.csproj.CoreCompileInputs.cache
+C:\csharp\2.feladat\2.feladat\obj\Debug\net6.0\2.feladat.dll
+C:\csharp\2.feladat\2.feladat\obj\Debug\net6.0\refint\2.feladat.dll
+C:\csharp\2.feladat\2.feladat\obj\Debug\net6.0\2.feladat.pdb
+C:\csharp\2.feladat\2.feladat\obj\Debug\net6.0\2.feladat.genruntimeconfig.cache
+C:\csharp\2.feladat\2.feladat\obj\Debug\net6.0\ref\2.feladat.dll

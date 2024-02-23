@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dobos.attila\\source\\repos\\2.feladat\\2.feladat\\2.feladat.csproj": {}
+    "C:\\csharp\\2.feladat\\2.feladat\\2.feladat.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dobos.attila\\source\\repos\\2.feladat\\2.feladat\\2.feladat.csproj": {
+    "C:\\csharp\\2.feladat\\2.feladat\\2.feladat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dobos.attila\\source\\repos\\2.feladat\\2.feladat\\2.feladat.csproj",
+        "projectUniqueName": "C:\\csharp\\2.feladat\\2.feladat\\2.feladat.csproj",
         "projectName": "2.feladat",
-        "projectPath": "C:\\Users\\dobos.attila\\source\\repos\\2.feladat\\2.feladat\\2.feladat.csproj",
-        "packagesPath": "C:\\Users\\dobos.attila\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dobos.attila\\source\\repos\\2.feladat\\2.feladat\\obj\\",
+        "projectPath": "C:\\csharp\\2.feladat\\2.feladat\\2.feladat.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\csharp\\2.feladat\\2.feladat\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\dobos.attila\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

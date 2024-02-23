@@ -12,7 +12,7 @@ StreamReader sr = new StreamReader("telepules.txt");
 while (!sr.EndOfStream)
 {
     string[] sor = sr.ReadLine().Split(" ");
-    Telepulesek.Add(new Telepules(int.Parse(sor[0]), sor[1], double.Parse(sor[2].Replace('.', ',')), double.Parse(sor[3].Replace('.', ',')), double.Parse(sor[4].Replace('.', ',')), double.Parse(sor[5].Replace('.', ',')), sor[6], int.Parse(sor[7]), int.Parse(sor[8])));
+    Telepulesek.Add(new Telepules(int.Parse(sor[0]), sor[1], double.Parse(sor[3].Replace('.', ',')), double.Parse(sor[2].Replace('.', ',')), double.Parse(sor[4].Replace('.', ',')), double.Parse(sor[5].Replace('.', ',')), sor[6], int.Parse(sor[7]), int.Parse(sor[8])));
 }
 sr.Close();
 
@@ -38,13 +38,15 @@ Console.WriteLine($"{LakossagAlapjanRendezett.ElementAt(1).Key} - { LakossagAlap
 
 
 
-/*
-//2.b
 
+//2.b
+/*
 var SzelessegAlapjanRendezett = Telepulesek.OrderByDescending(x => x.Hosszusagi).ToList();
 Console.WriteLine(SzelessegAlapjanRendezett[0].TelepulesNeve);
-//2.b Valasz:  Uszka
 */
+//2.b Valasz:  Uszka
+//2.b Valasz forditott: Tornanadaska
+
 
 
 
@@ -83,8 +85,9 @@ for (int i = 1; i < JoSzelessegiKorok.Count(); i++)
     }
 }
 Console.WriteLine($"{tele1} - {tele2} = {kulonbseg}");
-//2.d Valasz: Karczag-Berekfurdo-350,06
 */
+//2.d Valasz: Karczag-Berekfurdo-350,06
+
 
 
 
@@ -100,43 +103,94 @@ foreach (Telepules telepules in Telepulesek)
 
 var amiKell = BudaTelepulesek.OrderBy(x => x.Szelessegi).ToList().Take(3).Last();
 Console.WriteLine(amiKell.TelepulesNeve);
+
 //2.e Valasz: Budaors
+//2.e Valasz forditott: Budakeszi
 */
 
 
 
 
 //2.f
-/*
-int amiIgen = 0;
-bool voltA, voltE, voltT;
-List<Telepules> AET = new List<Telepules>();
 
-void Reset()
-{
-    voltA = false; voltE = false; voltT = false;
-}
+int aetszam = 0;
+List<Telepules> aetatet = new List<Telepules>();
 
-foreach (Telepules telepules in Telepulesek)
+
+foreach (var telepules in Telepulesek)
 {
-    Reset();
-    foreach (char betu in telepules.TelepulesNeve)
+    List<char> aetKarakterek = new List<char>();
+    foreach (char karakter in telepules.TelepulesNeve.ToLower())
     {
-        if (betu == 'a' || betu == 'A')
-            voltA = true;
-
-        if ((betu == 't' || betu == 'T') && !voltE)
-            Reset();
-        else if ((betu == 'e' || betu == 'E') && voltA)
-            voltE = true;
-
-
-        else if ((betu == 't' || betu == 'T') && voltA && voltE)
-            voltT = true;
+        if (karakter == 'a')
+            aetKarakterek.Add(karakter);
+        else if (karakter == 'e')
+            aetKarakterek.Add(karakter);
+        else if (karakter == 't')
+            aetKarakterek.Add(karakter);
     }
-    if (voltA && voltE && voltT)
-        amiIgen++;
+    if (aetKarakterek.Count >= 3)
+    {
+        int a = -1;
+        int e = -1;
+        int t = -1;
+        bool aUtanT = false;
+        int aUtanTaIndex = -2;
+        List<int> EbetukIndexei = new List<int>();
+        for (int i = 0; i < aetKarakterek.Count(); i++)
+        {
+            if (aetKarakterek[i] == 'a')
+                a = i;
+            else if (aetKarakterek[i] == 'e')
+            {
+                e = i;
+                EbetukIndexei.Add(i);
+            }           
+            else if (aetKarakterek[i] == 't')
+                t = i;
+
+            if (a != -1 && e != -1 && t != -1)
+            {
+                if (a < t && t < e)
+                {
+                    aUtanT = true;
+                    aUtanTaIndex = a;
+                }
+
+                if (aUtanT && a == aUtanTaIndex)
+                {
+                    continue;
+                }
+                else
+                {
+                    if(a < e && e < t)
+                    {
+                        int hanyE = 0;
+                        for (int j = a; j < t; j++)
+                        {
+                            if (aetKarakterek[j] == 'e')
+                                hanyE++;
+                        }
+                        if (hanyE == 1)
+                        {
+                            aetszam++;
+                            aetatet.Add(telepules);
+                            break;
+                        }                       
+                    }
+                }              
+            }
+        }
+    }
 }
-Console.WriteLine(amiIgen);
-//2.f Valasz: 139
-*/
+//2.f Valasz: 116
+
+
+Console.WriteLine(aetszam);
+
+foreach (var item in aetatet)
+{
+    Console.WriteLine(item.TelepulesNeve);
+}
+
+Console.WriteLine(aetatet.Count());
