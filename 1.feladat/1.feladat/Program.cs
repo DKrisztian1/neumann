@@ -21,49 +21,31 @@ stringSzamok = File.ReadAllLines("szamok.txt").ToList();
 
 
 //1.a
-
+/*
 long x = 1310438493;
-long reminder = 1;
-long y;
 int hany = 0;
-foreach (var szam in szamok)
+long FindGCD(long a, long b)
 {
-    y = Convert.ToInt64(szam);
+    a = Math.Abs(a);
+    b = Math.Abs(b);
 
-    if (x > y)
+    while (b != 0)
     {
-        if (x % y == 0) { reminder = y; }
-
-        else
-        {
-            reminder = x % y;
-
-            if (reminder != 0) { reminder = reminder % y; }
-
-        }
-    }
-    else if (x == y || x < y)
-    {
-        if (y % x == 0) { reminder = x; }
-
-        else
-        {
-
-            reminder = y % x;
-
-            if (reminder != 0) { reminder = reminder % x; }
-
-        }
-
+        long temp = b;
+        b = a % b;
+        a = temp;
     }
 
-    if (reminder==1)
-    {
+    return a;
+}
+
+foreach (long szam in szamok)
+{
+    if (FindGCD(x, szam) ==1)
         hany++;
-    }
 }
 Console.WriteLine(hany);
-
+*/
 
 
 
@@ -85,6 +67,7 @@ foreach (var szam in stringSzamok)
 
     for (int i = 0; i < firstCharsArray.Length; i++)
     {
+        azvolt = true;
         if (firstCharsArray[i].ToString() != secondCharsArray[i].ToString())
         {
             azvolt = false;
@@ -96,7 +79,9 @@ foreach (var szam in stringSzamok)
 
 }
 Console.WriteLine(hanyAnaize);
+//1.b Valasz: 28
 */
+
 
 
 //1.c
